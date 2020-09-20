@@ -15,25 +15,28 @@ namespace ContactList.Models
             modelBuilder.Entity<Contact>().HasData(
                 new Contact
                 {
+                    ContactId = 1,
                     FirstName = "Delores",
                     LastName = "Del Rio",
-                    Phone = 555 - 456 - 7890,
+                    Phone = "555-456-7890",
                     Email = "delores@hotmail.com",
                     CategoryId = "Fr"
                 },
                 new Contact
                 {
+                    ContactId = 2,
                     FirstName = "Efren",
                     LastName = "Herrera",
-                    Phone = 555 - 456 - 7890,
+                    Phone = "555-456-7890",
                     Email = "efren@aol.com",
                     CategoryId = "W"
                 },
                 new Contact
                 {
+                    ContactId = 3,
                     FirstName = "Mary",
                     LastName = "Walton",
-                    Phone = 555 - 123 - 4567,
+                    Phone = "555-123-4567",
                     Email = "MaryEllen@yahoo.com",
                     CategoryId = "Fm"
                 }

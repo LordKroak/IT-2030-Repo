@@ -64,7 +64,7 @@ namespace ContactList.Migrations
             migrationBuilder.AddForeignKey(
                 name: "FK_Contacts_Categories_CategoryId",
                 table: "Contacts",
-                column: "CategorId",
+                column: "CategoryId",
                 principalTable: "Categories",
                 principalColumn: "CategoryId",
                 onDelete: ReferentialAction.Cascade);
@@ -85,7 +85,7 @@ namespace ContactList.Migrations
 
             migrationBuilder.DropColumn(
                 name: "CategoryId",
-                table: "Movies");
+                table: "Contacts");
         }
     }
 }

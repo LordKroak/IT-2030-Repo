@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Lab_4ContactManager.Models;
-using System.Runtime.InteropServices.ComTypes;
+using Microsoft.EntityFrameworkCore;
 using ContactList.Models;
 
 namespace Lab_4ContactManager.Controllers
@@ -23,7 +17,7 @@ namespace Lab_4ContactManager.Controllers
         {
             var contacts = context.Contacts
             .Include(m => m.Category)
-            .OrderBy(m => m.CatName)
+            .OrderBy(m => m.FirstName)
             .ToList();
             return View(contacts);
         }

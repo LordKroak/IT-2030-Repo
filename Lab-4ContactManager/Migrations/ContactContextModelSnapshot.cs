@@ -59,11 +59,12 @@ namespace ContactList.Models
                 b.Property<string>("Email")
                     .IsRequired();
 
+
                 b.HasKey("ContactId");
 
-                b.HasIndex("GenreId");
+                b.HasIndex("CategoryId");
 
-                b.ToTable("Movies");
+                b.ToTable("Contacts");
 
                 b.HasData(
                     new

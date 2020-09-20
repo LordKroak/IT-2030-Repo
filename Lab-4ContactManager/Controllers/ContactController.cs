@@ -1,27 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Lab_4ContactManager.Models;
+using ContactList.Models;
 
 namespace Lab_4ContactManager.Controllers
 {
     public class ContactController : Controller
     {
-        private ContactContext context { get; set; }
+        private ContactContext Context { get; set; }
 
         public ContactController(ContactContext ctx)
         {
-            context = ctx;
+            Context = ctx;
         }
 
         [HttpGet]
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
-            ViewBag.Contacts = context.Contacts.OrderBy(g => g.Name).ToList();
+            ViewBag.Categories = Context.Categories.OrderBy(g => g.CatName).ToList();
             return View("Edit", new Contact());
+        }
+
+        public IActionResult Edit(int id)
+        {
+            ViewBag.Action = "Edit";
+            ViewBag.Categories = Context.Categories.OrderBy(g => g.CatName).ToList();
+            var contact = Context.Contacts.Find(id);
+            return View(contact);
         }
         [HttpGet]
         public IActionResult Edit(Contact contact)
@@ -30,19 +35,19 @@ namespace Lab_4ContactManager.Controllers
             {
                 if (contact.ContactId == 0)
                 {
-                    context.Contacts.Add(contact);
+                    Context.Contacts.Add(contact);
                 }
                 else
                 {
-                    context.Contacts.Update(contact);
+                    Context.Contacts.Update(contact);
                 }
-                context.SaveChanges();
+                Context.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewBag.Action = (contact.ContactId == 0) ? "Add" : "Edit";
-                ViewBag.Genres = context.Genres.OrderBy(g => g.Name).ToList();
+                ViewBag.Categories = Context.Categories.OrderBy(g => g.CatName).ToList();
                 return View(contact);
             }
         }
@@ -50,13 +55,13 @@ namespace Lab_4ContactManager.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var contact = context.Contacts.Find(id);
+            var contact = Context.Contacts.Find(id);
             return View(contact);
         }
         public IActionResult Delete(Contact contact)
         {
-            context.Contacts.Remove(contact);
-            context.SaveChanges();
+            Context.Contacts.Remove(contact);
+            Context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
     }
