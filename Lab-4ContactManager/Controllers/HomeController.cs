@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ContactManager.Models;
+using Lab_4ContactManager.Models;
 using System.Runtime.InteropServices.ComTypes;
 using ContactList.Models;
 
