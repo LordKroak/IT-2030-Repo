@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
 
 namespace ContactList.Migrations
 {
@@ -30,9 +29,9 @@ namespace ContactList.Migrations
                 columns: new[] { "CategoryId", "CatName" },
                 values: new object[,]
                 {
-                    { "Fr", "Friend" },
-                    { "W", "Work" },
-                    { "Fm", "Family" }
+                    { 1, "Friend" },
+                    { 2, "Work" },
+                    { 3, "Family" }
                 });
 
             migrationBuilder.UpdateData(
@@ -40,21 +39,21 @@ namespace ContactList.Migrations
                 keyColumn: "ContactId",
                 keyValue: 1,
                 column: "CategoryId",
-                value: "Fr");
+                value: 1);
 
             migrationBuilder.UpdateData(
                 table: "Contacts",
                 keyColumn: "ContactId",
                 keyValue: 2,
                 column: "CategoryId",
-                value: "W");
+                value: 2);
 
             migrationBuilder.UpdateData(
                 table: "Contacts",
                 keyColumn: "ContactId",
                 keyValue: 3,
                 column: "CategoryId",
-                value: "Fm");
+                value: 3);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contacts_CategoryId",

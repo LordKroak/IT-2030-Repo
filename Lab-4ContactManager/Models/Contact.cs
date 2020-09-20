@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ContactList.Models
@@ -22,7 +21,7 @@ namespace ContactList.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter a category.")]
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
         public string Organization { get; set; }
         

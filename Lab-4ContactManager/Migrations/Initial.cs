@@ -24,17 +24,17 @@ namespace ContactList.Migrations
                 });
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "ContactId", "FirstName", "LastName", "Phone", "Email" },
+                columns: new[] { "ContactId", "FirstName", "LastName", "Phone", "Email", "Organization" },
                 values: new object[] { 1, "Delores", "Del Rio", "555-987-6543", "delores@hotmail.com" });
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "ContactId", "FirstName", "LastName", "Phone", "Email" },
+                columns: new[] { "ContactId", "FirstName", "LastName", "Phone", "Email", "Organization" },
                 values: new object[] { 2, "Efren", "Herrera", "555-456-7890", "efren@aol.com" });
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "ContactId", "FirstName", "LastName", "Phone", "Email" },
+                columns: new[] { "ContactId", "FirstName", "LastName", "Phone", "Email", "Organization" },
                 values: new object[] { 3, "Mary Ellen", "Walton", "555-123-4567", "MaryEllen@yahoo.com" });
         }
 

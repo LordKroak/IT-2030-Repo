@@ -20,7 +20,7 @@ namespace ContactList.Models
                     LastName = "Del Rio",
                     Phone = "555-456-7890",
                     Email = "delores@hotmail.com",
-                    CategoryId = "Fr"
+                    CategoryId = 1
                 },
                 new Contact
                 {
@@ -29,7 +29,7 @@ namespace ContactList.Models
                     LastName = "Herrera",
                     Phone = "555-456-7890",
                     Email = "efren@aol.com",
-                    CategoryId = "W"
+                    CategoryId = 2
                 },
                 new Contact
                 {
@@ -38,13 +38,13 @@ namespace ContactList.Models
                     LastName = "Walton",
                     Phone = "555-123-4567",
                     Email = "MaryEllen@yahoo.com",
-                    CategoryId = "Fm"
+                    CategoryId = 3
                 }
             );
             modelBuilder.Entity<Contact>().HasData(
-                new Category { CategoryId = "Fr", CatName = "Friend" },
-                new Category { CategoryId = "W", CatName = "Work" },
-                new Category { CategoryId = "Fm", CatName = "Family" }
+                new Category { CategoryId = 1, CatName = "Friend" },
+                new Category { CategoryId = 2, CatName = "Work" },
+                new Category { CategoryId = 3, CatName = "Family" }
             );
         }
     }

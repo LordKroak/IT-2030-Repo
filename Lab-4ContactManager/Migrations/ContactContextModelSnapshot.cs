@@ -70,7 +70,7 @@ namespace ContactList.Models
                     new
                     {
                         ContactId = 1,
-                        CategoryId = "Fr",
+                        CategoryId = 1,
                         FirstName = "Delores",
                         LastName = "Del Rio",
                         Phone = "555-987-6543",
@@ -79,7 +79,7 @@ namespace ContactList.Models
                     new
                     {
                         ContactId = 2,
-                        CategoryId = "W",
+                        CategoryId = 2,
                         FirstName = "Efren",
                         LastName = "Herrera",
                         Phone = "555-456-7890",
@@ -88,7 +88,7 @@ namespace ContactList.Models
                     new
                     {
                         ContactId = 3,
-                        CategoryId = "Fm",
+                        CategoryId = 3,
                         FirstName = "Mary Ellen",
                         LastName = "Walton",
                         Phone = "555-123-4567",
