@@ -12,6 +12,7 @@ namespace ContactList.Models
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
+#pragma warning disable 612, 618
             modelBuilder
                     .HasAnnotation("ProductVersion", "3.0.0-preview5.19227.1")
                     .HasAnnotation("Relational:MaxIdentifierLength", 128)
@@ -102,6 +103,7 @@ namespace ContactList.Models
                     .HasForeignKey("CategoryId")
                     .OnDelete(DeleteBehavior.Cascade);
             });
+#pragma warning restore 612, 618
         }
     }
 }
