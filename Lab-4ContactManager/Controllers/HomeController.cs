@@ -7,15 +7,15 @@ namespace Lab_4ContactManager.Controllers
 {
     public class HomeController : Controller
     {
-        private ContactContext Context { get; set; }
+        private ContactContext context { get; set; }
         public HomeController(ContactContext ctx)
         {
-            Context = ctx;
+            context = ctx;
         }
 
         public IActionResult Index()
         {
-            var contacts = Context.Contacts
+            var contacts = context.Contacts
             .Include(m => m.Category)
             .OrderBy(m => m.FirstName)
             .ToList();
